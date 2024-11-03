@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows XP Simulation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="taskbar">
+        <div class="start-button" onclick="toggleStartMenu()">Start</div>
+        <div class="taskbar-items"></div>
+        <div class="taskbar-clock" id="taskbar-clock"></div>
+    </div>
+    <div class="start-menu" id="start-menu">
+        <ul>
+            <li onclick="openWindow('My Computer')">My Computer</li>
+            <li onclick="openWindow('Recycle Bin')">Recycle Bin</li>
+            <li onclick="openWindow('Notepad')">Notepad</li>
+            <li onclick="openWindow('Task Manager')">Task Manager</li>
+            <li onclick="openWindow('Minesweeper')">Minesweeper</li>
+        </ul>
+    </div>
+    <div class="desktop" oncontextmenu="showContextMenu(event)">
+        <div class="icon" onclick="openWindow('My Computer')">
+            <img src="my-computer.ico" alt="My Computer">
+            <span>My Computer</span>
+        </div>
+        <div class="icon" onclick="openWindow('Recycle Bin')">
+            <img src="recyle.ico" alt="Recycle Bin">
+            <span>Recycle Bin</span>
+        </div>
+        <div class="icon" onclick="openWindow('Notepad')">
+            <img src="file.ico" alt="Notepad">
+            <span>Notepad</span>
+        </div>
+        <div class="icon" onclick="openWindow('Task Manager')">
+            <img src="task-manager.ico" alt="Task Manager">
+            <span>Task Manager</span>
+        </div>
+        <div class="icon" onclick="openWindow('Minesweeper')">
+            <img src="game.ico" alt="Minesweeper">
+            <span>Minesweeper</span>
+        </div>
+    </div>
+    <div class="context-menu" id="context-menu">
+        <ul>
+            <li onclick="changeCursor('default')">Default Cursor</li>
+            <li onclick="changeCursor('pointer')">Pointer Cursor</li>
+            <li onclick="changeCursor('crosshair')">Crosshair Cursor</li>
+        </ul>
+    </div>
+    <div class="window" id="my-computer">
+        <div class="title-bar">
+            <span class="title">My Computer</span>
+            <div class="buttons">
+                <button class="minimize">_</button>
+                <button class="maximize">□</button>
+                <button class="close">X</button>
+            </div>
+        </div>
+        <div class="content">
+            <p>Welcome to My Computer!</p>
+        </div>
+    </div>
+    <div class="window" id="recycle-bin">
+        <div class="title-bar">
+            <span class="title">Recycle Bin</span>
+            <div class="buttons">
+                <button class="minimize">_</button>
+                <button class="maximize">□</button>
+                <button class="close">X</button>
+            </div>
+        </div>
+        <div class="content">
+            <p>Recycle Bin is empty.</p>
+        </div>
+    </div>
+    <div class="window" id="notepad">
+        <div class="title-bar">
+            <span class="title">Notepad</span>
+            <div class="buttons">
+                <button class="minimize">_</button>
+                <button class="maximize">□</button>
+                <button class="close">X</button>
+            </div>
+        </div>
+        <div class="content">
+            <textarea rows="10" cols="50">Type your notes here...</textarea>
+        </div>
+    </div>
+    <div class="window" id="task-manager">
+        <div class="title-bar">
+            <span class="title">Task Manager</span>
+            <div class="buttons">
+                <button class="minimize">_</button>
+                <button class="maximize">□</button>
+                <button class="close">X</button>
+            </div>
+        </div>
+        <div class="content">
+            <p>CPU Usage: 15%</p>
+            <p>Memory Usage: 45%</p>
+            <p>Disk Usage: 20%</p>
+        </div>
+    </div>
+    <div class="window" id="minesweeper">
+        <div class="title-bar">
+            <span class="title">Minesweeper</span>
+            <div class="buttons">
+                <button class="minimize">_</button>
+                <button class="maximize">□</button>
+                <button class="close">X</button>
+            </div>
+        </div>
+        <div class="content">
+            <div id="minesweeper-game"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
